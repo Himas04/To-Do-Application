@@ -1,0 +1,324 @@
+/* ===========================
+   Google Font
+=========================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ===========================
+   Reset
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ===========================
+   Body
+=========================== */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    background: linear-gradient(-45deg, #243b55, #141e30, #2b5876, #4e4376);
+
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+
+    padding: 20px;
+}
+
+/* ===========================
+   Main Card
+=========================== */
+
+.container {
+    width: 430px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
+
+    animation: fadeIn 0.8s ease;
+}
+
+/* ===========================
+   Title
+=========================== */
+
+h2 {
+    color: white;
+
+    text-align: center;
+
+    font-size: 32px;
+
+    margin-bottom: 25px;
+
+    letter-spacing: 1px;
+}
+
+/* ===========================
+   Input Area
+=========================== */
+
+.input-container {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: #ddd;
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.22);
+
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.35);
+
+    transform: scale(1.02);
+}
+
+/* ===========================
+   Add Button
+=========================== */
+
+#btn {
+    width: 120px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-weight: 600;
+
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+
+    transition: 0.3s;
+}
+
+#btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(0, 114, 255, 0.4);
+}
+
+#btn:active {
+    transform: scale(0.95);
+}
+
+/* ===========================
+   Task List
+=========================== */
+
+ul {
+    list-style: none;
+
+    max-height: 330px;
+
+
+}
+
+/* ===========================
+   Task Card
+=========================== */
+
+li {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 14px;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    transition: 0.35s;
+
+    animation: taskIn 0.4s ease;
+}
+
+li:hover {
+    transform: translateX(8px);
+
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* ===========================
+   Completed
+=========================== */
+
+.completed {
+    background: rgba(0, 255, 150, 0.2);
+}
+
+.completed span {
+    text-decoration: line-through;
+
+    opacity: 0.7;
+}
+
+/* ===========================
+   Delete Button
+=========================== */
+
+li button {
+    background: #ff4d4d;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 8px 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+li button:hover {
+    background: #e60023;
+
+    transform: scale(1.05);
+}
+
+
+
+/* ===========================
+   Dustbin
+=========================== */
+
+#dustbin {
+    position: fixed;
+
+    bottom: -100px;
+
+    right: 30px;
+
+    font-size: 60px;
+
+    transition: 0.4s;
+}
+
+#dustbin.show {
+    bottom: 150px;
+}
+
+/* ===========================
+   Delete Animation
+=========================== */
+
+.delete-animation {
+    animation: deleteTask 0.8s forwards;
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+@keyframes taskIn {
+    from {
+        opacity: 0;
+
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+@keyframes deleteTask {
+    0% {
+        opacity: 1;
+
+        transform: translateX(0) rotate(0);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform: translateX(320px) rotate(30deg) scale(0.2);
+    }
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
