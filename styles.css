@@ -322,3 +322,77 @@ li button:hover {
         background-position: 0% 50%;
     }
 }
+/* ===========================
+   Mobile Responsive
+=========================== */
+
+@media (max-width: 768px) {
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 380px;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .input-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    input,
+    #btn {
+        width: 100%;
+    }
+
+    #btn {
+        padding: 14px;
+    }
+
+    li {
+        font-size: 15px;
+        padding: 14px;
+    }
+
+    li button {
+        padding: 7px 12px;
+    }
+
+    /* Dustbin */
+    #dustbin {
+        left: 50%;
+        right: auto;
+        bottom: -100px;
+        transform: translateX(-50%);
+        font-size: 48px;
+        transition: all 0.4s ease;
+    }
+
+    #dustbin.show {
+        bottom: 35px;
+    }
+
+    /* Delete Animation */
+    @keyframes deleteTask {
+        0% {
+            opacity: 1;
+            transform: translateX(0) scale(1) rotate(0deg);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translate(120px, 220px) scale(0.2) rotate(360deg);
+        }
+    }
+}
